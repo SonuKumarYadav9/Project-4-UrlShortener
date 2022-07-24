@@ -6,20 +6,19 @@ const urlModel = new mongoose.Schema({
       type: String,
       required: true,
       unique: true,
-      lowercase: true
+      lowercase: true,
+      trim:true
    },
    longUrl: {
       type: String,
       required: true,
-      unique: true
+      unique: true,
    },
    shortUrl: {
       type: String,
       unique: true,
-     required: true
-   }
-   
-
-}, { timestamps: true })
+     required: true,
+     }
+   }, { timestamps: true })
 
 module.exports = mongoose.model('Url', urlModel)
