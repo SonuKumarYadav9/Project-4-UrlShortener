@@ -81,6 +81,7 @@ const getUrl = async function (req, res) {
         .status(400)
         .send({ status: false, message: "enter valid urlcode" });
     let cahcedUrlData = await GET_ASYNC(`${urlCode}`);
+     let data = JSON.parse(cahcedUrlData);
     //if data present in cache
     if (cahcedUrlData) {
       res.redirect(`${data.longUrl}`, 302);
